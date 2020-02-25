@@ -4992,7 +4992,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 8955740474360572233}
-  playerNum: 0
+  controls:
+    playerNum: 0
+    useMouse: 1
+    left: 0
+    right: 0
+    turnSpeed: 30
   vehicleModel: {fileID: 1653130961413028828}
   sphere: {fileID: 1653130961353010985}
   smokeLeft: {fileID: 1653130961717794490}
@@ -5032,7 +5037,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0.3
       m_ConstantMax: 0.6
-  text: {fileID: 0}
 --- !u!114 &8955740474360572233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5111,7 +5115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653130961135016762}
   m_Layer: 0
-  m_Name: vehicleCar
+  m_Name: Player0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9868,7 +9872,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 49a087bec49621e4e82453f9f9afdb7f, type: 2}
-  - {fileID: 2100000, guid: 992603aa16795c64d9420d27ef8191cf, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10223,8 +10227,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863503289367177399}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.16999999, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.7500005, z: 0.25000012}
+  m_LocalPosition: {x: 0, y: 0.165, z: 0.03}
+  m_LocalScale: {x: 0.25, y: 0.5, z: 0.25}
   m_Children:
   - {fileID: 1063365362407916373}
   m_Father: {fileID: 1653130961413028850}

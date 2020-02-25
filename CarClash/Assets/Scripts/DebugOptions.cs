@@ -78,7 +78,7 @@ public class DebugOptions : Singleton<DebugOptions>
         {
             foreach (Car car in FindObjectsOfType<Car>())
             {
-                if (car.playerNum == currentCar)
+                if (car.controls.playerNum == currentCar)
                 {
                     targetCar = car;
                 }
@@ -89,7 +89,7 @@ public class DebugOptions : Singleton<DebugOptions>
         {
             foreach (CameraController camera in FindObjectsOfType<CameraController>())
             {
-                if (camera.GetComponent<Car>().playerNum == currentCar)
+                if (camera.GetComponent<Car>().controls.playerNum == currentCar)
                 {
                     cameraController = camera;
                 }

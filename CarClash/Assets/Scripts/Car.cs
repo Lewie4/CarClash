@@ -19,9 +19,20 @@ public class Car : MonoBehaviour
         public ParticleSystem.MinMaxCurve smokeSize = new ParticleSystem.MinMaxCurve(0.3f, 0.6f);
     }
 
+    [System.Serializable]
+    public class Controls
+    {
+        public int playerNum;
+        public bool useMouse = true;
+        public KeyCode left;
+        public KeyCode right;
+        public float turnSpeed = 30f;
+    }
+    
     public CameraController camera;
 
-    public int playerNum;
+    [Header("Controls")]
+    public Controls controls;
 
     [Header("Components")]
     public Transform vehicleModel;
@@ -78,20 +89,20 @@ public class Car : MonoBehaviour
         Accelerate();
 
         //Time Control
-        if (Input.GetMouseButtonDown(0))
+        if ((controls.useMouse && Input.GetMouseButtonDown(0)) || (!controls.useMouse && (Input.GetKeyDown(controls.left) || Input.GetKeyDown(controls.right))))
         {
             StartTurn();
         }
-        else if (Input.GetMouseButton(0))
+        else if ((controls.useMouse && Input.GetMouseButton(0)) || (!controls.useMouse && (Input.GetKey(controls.left) || Input.GetKey(controls.right))))
         {
             if (isTurning &&!(nearGround || settings.airBoost))
             {
                 FinishTurn();
             }
 
-            ControlSteer();
+            ControlSteer(controls.useMouse ? 0 : Input.GetKey(controls.left) ? -1 : 1);
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if ((controls.useMouse && Input.GetMouseButtonUp(0)) || (!controls.useMouse && (Input.GetKeyUp(controls.left) || Input.GetKeyUp(controls.right))))
         {
             FinishTurn();
         }
@@ -211,7 +222,10 @@ public class Car : MonoBehaviour
             currentSlowMo = settings.slowMoPower;
             startRot = transform.eulerAngles;
 
-            clickOffset = Input.mousePosition;
+            if (controls.useMouse)
+            {
+                clickOffset = Input.mousePosition;
+            }
         }
 
     }
@@ -229,9 +243,10 @@ public class Car : MonoBehaviour
         }
 
         rotate = 0;
+        boostMod = 0;
     }
 
-    private void ControlSteer()
+    private void ControlSteer(int turnDirection = 0)
     {
         /*Vector3 worldPoint = Vector3.zero;
         Vector3 cameraPoint = Input.mousePosition;
@@ -248,23 +263,29 @@ public class Car : MonoBehaviour
 
         return Vector3.Normalize((vehicleModel.position) - worldPoint);*/
 
-        Vector3 cameraPoint = Input.mousePosition;
-        Vector3 dir = cameraPoint - clickOffset;
-        dir = new Vector3(dir.x / screenXDistance, 0);
+        if (controls.useMouse)
+        {
+            Vector3 cameraPoint = Input.mousePosition;
+            Vector3 dir = cameraPoint - clickOffset;
+            dir = new Vector3(dir.x / screenXDistance, 0);
 
-        //rotate = Vector3.Normalize(dir).x * -90;
-        rotate = Mathf.Clamp(dir.x * -30, -110f, 110f);
+            rotate = Mathf.Clamp(dir.x * -controls.turnSpeed, -110f, 110f);
 
-        var start = new Vector3(clickOffset.x / screenXDistance, clickOffset.y / screenYDistance);
-        var end = new Vector3(cameraPoint.x / screenXDistance, cameraPoint.y / screenYDistance);
+            var start = new Vector3(clickOffset.x / screenXDistance, clickOffset.y / screenYDistance);
+            var end = new Vector3(cameraPoint.x / screenXDistance, cameraPoint.y / screenYDistance);
 
-        boostMod = Mathf.Clamp01(Vector3.Distance(start, end));
+            boostMod = Mathf.Clamp01(Vector3.Distance(start, end));
+        }
+        else
+        {
+            rotate += turnDirection * controls.turnSpeed * Time.deltaTime;
+
+            boostMod = Mathf.Lerp(boostMod, Random.Range(0.65f, 1f), Time.deltaTime * 6);
+        }
 
         arrowPower.transform.localScale = new Vector3(1, boostMod, 1);
 
         //Debug.Log("First click: " + clickOffset + " Current: " + cameraPoint + " Rotate: " + rotate + " Boost Mod: " + boostMod);
-
-        //text.text = "Rotate: " + rotate + " Boost Mod: " + boostMod;
     }
 
     void OnTriggerEnter(Collider other)
