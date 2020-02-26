@@ -133,13 +133,20 @@ public class Car : MonoBehaviour
             }
             else
             {
-                vehicleModel.localRotation = Quaternion.Euler(new Vector3(vehicleModel.localEulerAngles.x, rotate, vehicleModel.localEulerAngles.z + Mathf.Sin(Time.time * settings.vibrateSpeed) * settings.vibrateAmount * boostMod));
+                var vibration = Mathf.Sin(Time.time * settings.vibrateSpeed) * settings.vibrateAmount * boostMod;
+                Debug.Log(vibration);
+                //vehicleModel.Rotate(0f, 0f, vibration);
+                vehicleModel.localRotation = Quaternion.Euler(new Vector3(0, rotate, vibration));
+                //vehicleModel.localRotation = Quaternion.Euler(vehicleModel.localEulerAngles + (Vector3.up * rotate));
             }        
         }
         else
         {
-            transform.rotation = Quaternion.LookRotation(sphere.velocity);  // Fix this later ,orthogonalVector);
-            vehicleModel.localRotation = Quaternion.Euler(new Vector3(vehicleModel.localEulerAngles.x, 0 , vehicleModel.localEulerAngles.z));
+            if (sphere.velocity.magnitude > 4)
+            {
+                transform.rotation = Quaternion.LookRotation(sphere.velocity);  // Fix this later ,orthogonalVector);
+                vehicleModel.localRotation = Quaternion.Euler(new Vector3(vehicleModel.localEulerAngles.x, 0, vehicleModel.localEulerAngles.z));
+            }
         }        
 
         if (wheelFrontLeft != null)
@@ -150,11 +157,6 @@ public class Car : MonoBehaviour
         {
             wheelFrontRight.localRotation = Quaternion.Euler(0, rotate / 2, 0);
         }
-
-        float tilt = 0.0f;
-
-        container.localPosition = containerBase + new Vector3(0, Mathf.Abs(tilt) / 2000, 0);
-        container.localRotation = Quaternion.Slerp(container.localRotation, Quaternion.Euler(0, rotate / 8, tilt), Time.deltaTime * 10.0f);
 
         //Movement
         if (nearGround)

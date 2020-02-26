@@ -92,7 +92,7 @@ public class CameraController : MonoBehaviour
         rig.position = Vector3.Lerp(rig.position, transform.position + cameraPositionOffset, Time.deltaTime * settings.followSpeed);
         if (settings.followRotation)
         {
-            rig.rotation = Quaternion.Lerp(rig.rotation, Quaternion.Euler((car.settings.driftTurning ? transform.eulerAngles : car.vehicleModel.transform.eulerAngles) + cameraRotationOffset), Time.deltaTime * settings.rotationSpeed);
+            rig.rotation = Quaternion.Lerp(rig.rotation, Quaternion.Euler((car.settings.driftTurning ? transform.eulerAngles : new Vector3(car.vehicleModel.transform.eulerAngles.x, car.vehicleModel.transform.eulerAngles.y, 0)) + cameraRotationOffset), Time.deltaTime * settings.rotationSpeed);
         }
     }
 
