@@ -9928,7 +9928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8619810544847117859
 Transform:
   m_ObjectHideFlags: 0
@@ -10021,8 +10021,9 @@ MonoBehaviour:
     alwaysSmoke: 0
     airBoost: 1
     driftTurning: 1
-    vibrateAmount: 5
-    vibrateSpeed: 35
+    snapTurning: 0
+    vibrateAmount: 0
+    vibrateSpeed: 0
     smokeSize:
       m_Mode: 3
       m_CurveMultiplier: 0
