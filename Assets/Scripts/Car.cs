@@ -14,6 +14,7 @@ public class Car : MonoBehaviour
         [Range(0.0f, 1.0f)] public float slowMoPower = 0.2f;
         public bool alwaysSmoke = false;
         public bool airBoost = true;
+        public bool driftTurning = true;
         public float vibrateAmount = 5f;
         public float vibrateSpeed = 35f;
         public ParticleSystem.MinMaxCurve smokeSize = new ParticleSystem.MinMaxCurve(0.3f, 0.6f);
@@ -125,8 +126,15 @@ public class Car : MonoBehaviour
 
         if (isTurning)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, startRot.y + rotate, 0));
-            vehicleModel.localRotation = Quaternion.Euler(new Vector3(vehicleModel.localEulerAngles.x, 0, vehicleModel.localEulerAngles.z + Mathf.Sin(Time.time * settings.vibrateSpeed) * settings.vibrateAmount * boostMod));
+            if (settings.driftTurning)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, startRot.y + rotate, 0));
+                vehicleModel.localRotation = Quaternion.Euler(new Vector3(vehicleModel.localEulerAngles.x, 0, vehicleModel.localEulerAngles.z + Mathf.Sin(Time.time * settings.vibrateSpeed) * settings.vibrateAmount * boostMod));
+            }
+            else
+            {
+                vehicleModel.localRotation = Quaternion.Euler(new Vector3(vehicleModel.localEulerAngles.x, rotate, vehicleModel.localEulerAngles.z + Mathf.Sin(Time.time * settings.vibrateSpeed) * settings.vibrateAmount * boostMod));
+            }        
         }
         else
         {
@@ -151,7 +159,7 @@ public class Car : MonoBehaviour
         //Movement
         if (nearGround)
         {
-            sphere.AddForce(vehicleModel.forward * speedTarget * currentSlowMo * Time.deltaTime, ForceMode.Acceleration);
+            sphere.AddForce((settings.driftTurning ? vehicleModel.forward : transform.forward) * speedTarget * currentSlowMo * Time.deltaTime, ForceMode.Acceleration);
         }
         else
         {
