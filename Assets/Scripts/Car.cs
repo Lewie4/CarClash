@@ -220,7 +220,14 @@ public class Car : MonoBehaviour
 
     private void Accelerate()
     {
-        speed = settings.acceleration;
+        if (GameManager.Instance.started)
+        {
+            speed = settings.acceleration;
+        }
+        else
+        {
+            sphere.velocity = Vector3.zero;
+        }
     }
 
     private void StartTurn()
@@ -248,7 +255,7 @@ public class Car : MonoBehaviour
 
         currentSlowMo = 1f;
 
-        if (nearGround || settings.airBoost)
+        if (GameManager.Instance.started && (nearGround || settings.airBoost))
         {
             sphere.AddForce(vehicleModel.forward * settings.boostPower * boostMod, ForceMode.VelocityChange);
         }
