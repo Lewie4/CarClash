@@ -4875,7 +4875,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 5000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -10020,6 +10020,7 @@ MonoBehaviour:
     slowMoPower: 0.2
     alwaysSmoke: 0
     airBoost: 1
+    driftTurning: 1
     vibrateAmount: 5
     vibrateSpeed: 35
     smokeSize:
