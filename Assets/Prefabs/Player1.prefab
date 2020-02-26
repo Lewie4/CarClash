@@ -4680,7 +4680,7 @@ ParticleSystem:
 --- !u!199 &7886713493027776780
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4845,13 +4845,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8619810543444160451}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalRotation: {x: -0.13995074, y: 0, z: 0, w: 0.9901585}
+  m_LocalPosition: {x: 0, y: 0.02, z: -4.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8619810544634846825}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -16.09, y: 0, z: 0}
 --- !u!20 &8619810543444160454
 Camera:
   m_ObjectHideFlags: 0
@@ -4876,7 +4876,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 5000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -9823,7 +9823,7 @@ ParticleSystem:
 --- !u!199 &8619810544247100322
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9999,7 +9999,7 @@ MonoBehaviour:
     useMouse: 0
     left: 276
     right: 275
-    turnSpeed: 150
+    turnSpeed: 60
   vehicleModel: {fileID: 9222093248557662134}
   sphere: {fileID: 8619810544159107632}
   smokeLeft: {fileID: 8619810544247100323}
@@ -10013,11 +10013,11 @@ MonoBehaviour:
   arrow: {fileID: 8697259583030226350}
   arrowPower: {fileID: 8279071483417286333}
   settings:
-    acceleration: 1500
+    acceleration: 850
     gravity: 100
-    drift: 1
-    boostPower: 35
-    slowMoPower: 0.2
+    drift: 0.98
+    boostPower: 25
+    slowMoPower: 0.8
     alwaysSmoke: 0
     airBoost: 1
     driftTurning: 1
@@ -10055,15 +10055,15 @@ MonoBehaviour:
   camera: {fileID: 8619810543444160454}
   rig: {fileID: 8619810544634846825}
   settings:
-    view: 0
-    followSpeed: 8
-    rotationSpeed: 4
+    view: 6
+    followSpeed: 7
+    rotationSpeed: 2.7
     followRotation: 1
     ppVolume: {fileID: 0}
-    lerpTime: 0.35
-    chromaticAberrationIntensity: 1
+    lerpTime: 2
+    chromaticAberrationIntensity: 0.8
     vignetteIntensity: 0.2
-    cameraDollyDistance: 3
+    cameraDollyDistance: 2
 --- !u!135 &8619810545388906238
 SphereCollider:
   m_ObjectHideFlags: 0
