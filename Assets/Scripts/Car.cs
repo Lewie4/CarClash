@@ -15,6 +15,7 @@ public class Car : MonoBehaviour
         public bool alwaysSmoke = false;
         public bool airBoost = true;
         public bool driftTurning = true;
+        public bool snapTurning = false;
         public float vibrateAmount = 5f;
         public float vibrateSpeed = 35f;
         public ParticleSystem.MinMaxCurve smokeSize = new ParticleSystem.MinMaxCurve(0.3f, 0.6f);
@@ -250,6 +251,11 @@ public class Car : MonoBehaviour
         if (nearGround || settings.airBoost)
         {
             sphere.AddForce(vehicleModel.forward * settings.boostPower * boostMod, ForceMode.VelocityChange);
+        }
+
+        if(settings.snapTurning)
+        {
+            sphere.velocity = sphere.velocity.magnitude * vehicleModel.forward;
         }
 
         rotate = 0;
