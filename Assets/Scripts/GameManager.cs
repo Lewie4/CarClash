@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         countdownProgress = countdownTimer;
+
         if(!countdown)
         {
             countdownText.gameObject.SetActive(false);
@@ -42,6 +43,8 @@ public class GameManager : Singleton<GameManager>
     {
         if (newTime != countdownTime)
         {
+            Debug.Log(countdownTime);
+
             animator.Play("Countdown");
             countdownTime = newTime;
             countdownText.text = countdownTime > 0 ? countdownTime.ToString() : "GO!";
