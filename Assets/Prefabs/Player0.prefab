@@ -4648,7 +4648,7 @@ ParticleSystem:
 --- !u!199 &873027617166666773
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4997,7 +4997,7 @@ MonoBehaviour:
     useMouse: 1
     left: 0
     right: 0
-    turnSpeed: 30
+    turnSpeed: 20
   vehicleModel: {fileID: 1653130961413028828}
   sphere: {fileID: 1653130961353010985}
   smokeLeft: {fileID: 1653130961717794490}
@@ -5011,15 +5011,16 @@ MonoBehaviour:
   arrow: {fileID: 1863503289367177399}
   arrowPower: {fileID: 1408371568199275428}
   settings:
-    acceleration: 1500
-    gravity: 100
-    drift: 1
-    boostPower: 35
-    slowMoPower: 0.2
+    acceleration: 1000
+    gravity: 250
+    drift: 0.18
+    boostPower: 30
+    slowMoPower: 0.5
     alwaysSmoke: 0
     airBoost: 1
-    vibrateAmount: 5
-    vibrateSpeed: 35
+    driftTurning: 0
+    vibrateAmount: 0.07
+    vibrateSpeed: 0
     smokeSize:
       m_Mode: 3
       m_CurveMultiplier: 0
@@ -5052,15 +5053,15 @@ MonoBehaviour:
   camera: {fileID: 1653130961984400095}
   rig: {fileID: 1653130960792722288}
   settings:
-    view: 0
-    followSpeed: 8
-    rotationSpeed: 4
+    view: 5
+    followSpeed: 6.6
+    rotationSpeed: 16.7
     followRotation: 1
-    ppVolume: {fileID: 0}
-    lerpTime: 0.35
-    chromaticAberrationIntensity: 1
-    vignetteIntensity: 0.2
-    cameraDollyDistance: 3
+    ppVolume: {fileID: 317741976}
+    lerpTime: 2
+    chromaticAberrationIntensity: 0.5
+    vignetteIntensity: 0.12
+    cameraDollyDistance: 2
 --- !u!135 &1653130960577897447
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9856,7 +9857,7 @@ ParticleSystem:
 --- !u!199 &1653130961717794491
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10068,8 +10069,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653130961984400090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalRotation: {x: 0.013525846, y: 0, z: 0, w: 0.99990857}
+  m_LocalPosition: {x: 0, y: 1.31, z: -5.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1653130960792722288}
@@ -10099,7 +10100,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -10353,6 +10354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1653130960577897444}
     m_Modifications:
+    - target: {fileID: 100000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
+      propertyPath: m_Name
+      value: model
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10408,10 +10413,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
       propertyPath: m_LocalScale.z
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
-      propertyPath: m_Name
-      value: model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
