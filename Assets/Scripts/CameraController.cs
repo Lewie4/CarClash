@@ -61,7 +61,7 @@ public class CameraController : MonoBehaviour
         float startDistance = Vector3.Distance(camera.transform.position, rig.position);
         initialFrustumHeight = ComputeFrustumHeight(startDistance);
 
-        UpdateCamera();
+        //UpdateCamera();
     }
 
     void UpdateCamera()
