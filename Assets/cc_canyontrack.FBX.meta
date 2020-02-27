@@ -35,6 +35,34 @@ ModelImporter:
     100058: G_RockObstacle_025
     100060: G_RockObstacleLarge_002
     100062: G_water
+    100064: Box-roadWidth20m
+    100066: Car_Base
+    100068: COL-Car
+    100070: Dummy_CarBase
+    100072: Dummy_Environment-Game
+    100074: Dummy_WorkingItems
+    100076: Line001
+    100078: Line_ MountainEdge
+    100080: Line_MainPath
+    100082: Line_profile_01-flat
+    100084: Line_profile_02-concave
+    100086: Line_profile_03-bankL
+    100088: Line_profile_03-bankR
+    100090: Line_profile_03-bankRW
+    100092: Line_profile_03-convex
+    100094: Line_RoadPath
+    100096: Line_RoadPath2
+    100098: Path-Car&Cam
+    100100: PhysCamera001
+    100102: PhysCamera001.Target
+    100104: Plane_map
+    100106: Plane_map-Layout2
+    100108: Rectangle_ContructionItems
+    100110: Sky001
+    100112: Text001
+    100114: Wheel-FrontL
+    100116: Wheel-FrontL001
+    100118: Wheels_Rear
     400000: //RootNode
     400002: Dummy_EnvObjects
     400004: G_ MountainGeomery
@@ -67,6 +95,34 @@ ModelImporter:
     400058: G_RockObstacle_025
     400060: G_RockObstacleLarge_002
     400062: G_water
+    400064: Box-roadWidth20m
+    400066: Car_Base
+    400068: COL-Car
+    400070: Dummy_CarBase
+    400072: Dummy_Environment-Game
+    400074: Dummy_WorkingItems
+    400076: Line001
+    400078: Line_ MountainEdge
+    400080: Line_MainPath
+    400082: Line_profile_01-flat
+    400084: Line_profile_02-concave
+    400086: Line_profile_03-bankL
+    400088: Line_profile_03-bankR
+    400090: Line_profile_03-bankRW
+    400092: Line_profile_03-convex
+    400094: Line_RoadPath
+    400096: Line_RoadPath2
+    400098: Path-Car&Cam
+    400100: PhysCamera001
+    400102: PhysCamera001.Target
+    400104: Plane_map
+    400106: Plane_map-Layout2
+    400108: Rectangle_ContructionItems
+    400110: Sky001
+    400112: Text001
+    400114: Wheel-FrontL
+    400116: Wheel-FrontL001
+    400118: Wheels_Rear
     2100000: t_rockside
     2100002: t_rocktop
     2100004: t_midfield
@@ -76,6 +132,10 @@ ModelImporter:
     2100012: t_water
     2100014: t_infield
     2100016: t_grass
+    2100018: 07 - Default
+    2100020: No Name
+    2100022: LayoutMap1
+    2100024: LayoutMap2
     2300000: G_ MountainGeomery
     2300002: G_horizon_far
     2300004: G_horizon_near
@@ -106,6 +166,14 @@ ModelImporter:
     2300054: G_RockObstacle_025
     2300056: G_RockObstacleLarge_002
     2300058: G_water
+    2300060: Box-roadWidth20m
+    2300062: Car_Base
+    2300064: COL-Car
+    2300066: Plane_map
+    2300068: Plane_map-Layout2
+    2300070: Wheel-FrontL
+    2300072: Wheel-FrontL001
+    2300074: Wheels_Rear
     3300000: G_ MountainGeomery
     3300002: G_horizon_far
     3300004: G_horizon_near
@@ -136,6 +204,14 @@ ModelImporter:
     3300054: G_RockObstacle_025
     3300056: G_RockObstacleLarge_002
     3300058: G_water
+    3300060: Box-roadWidth20m
+    3300062: Car_Base
+    3300064: COL-Car
+    3300066: Plane_map
+    3300068: Plane_map-Layout2
+    3300070: Wheel-FrontL
+    3300072: Wheel-FrontL001
+    3300074: Wheels_Rear
     4300000: G_ MountainGeomery
     4300002: G_horizon_near
     4300004: G_horizon_far
@@ -166,6 +242,15 @@ ModelImporter:
     4300054: G_RockObstacle_024
     4300056: G_RockObstacle_025
     4300058: G_RockObstacleLarge_002
+    4300060: Car_Base
+    4300062: Wheel-FrontL
+    4300064: Wheel-FrontL001
+    4300066: Wheels_Rear
+    4300068: COL-Car
+    4300070: Box-roadWidth20m
+    4300072: Plane_map
+    4300074: Plane_map-Layout2
+    10800000: Sky001
   externalObjects: {}
   materials:
     importMaterials: 1
