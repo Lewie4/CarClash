@@ -24,6 +24,9 @@ public class GameManager : Singleton<GameManager>
 
     public List<FlyingCameraNode> flyingCameraNodes;
 
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI finishTimeText;
+
     float countdownProgress;
     int countdownTime;
 
@@ -31,6 +34,8 @@ public class GameManager : Singleton<GameManager>
 
     int currentNode;
     float nodeProgress;
+
+    bool finished;
 
     private void Start()
     {
@@ -51,7 +56,14 @@ public class GameManager : Singleton<GameManager>
     {
         if(flyingCam)
         {
-            FlyingCam();
+            if (!finished)
+            {
+                FlyingCam();
+            }
+            else
+            {
+
+            }
         }
 
         if(!started && countdown && !flyingCam)
@@ -65,10 +77,10 @@ public class GameManager : Singleton<GameManager>
             }
         }
 
-        if(started)
+        if(started && !finished)
         {
             gameTime += Time.deltaTime;
-            gameTimeText.text = System.Math.Round(gameTime, 2).ToString();
+            gameTimeText.text = gameTime.ToString("0.00");
         }
     }
 
@@ -118,4 +130,15 @@ public class GameManager : Singleton<GameManager>
         gameTimeText.gameObject.SetActive(true);
     }
 
+    public void EndRace()
+    {
+        finished = true;
+
+        gameTimeText.gameObject.SetActive(false);
+
+        resultText.gameObject.SetActive(true);
+
+        finishTimeText.text = gameTime.ToString("0.00");
+        finishTimeText.gameObject.SetActive(true);
+    }
 }
