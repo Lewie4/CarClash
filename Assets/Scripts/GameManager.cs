@@ -17,15 +17,9 @@ public class GameManager : Singleton<GameManager>
     public bool countdown;
     public float countdownTimer;
 
-    public TextMeshProUGUI countdownText;
-    public Animator animator;
-
-    public TextMeshProUGUI gameTimeText;
-
     public List<FlyingCameraNode> flyingCameraNodes;
 
-    public TextMeshProUGUI resultText;
-    public TextMeshProUGUI finishTimeText;
+    public List<GameUI> gameUIs;
 
     float countdownProgress;
     int countdownTime;
@@ -41,14 +35,17 @@ public class GameManager : Singleton<GameManager>
     {
         countdownProgress = countdownTimer;
 
-        if(flyingCam || !countdown)
+        foreach (GameUI ui in gameUIs)
         {
-            countdownText.gameObject.SetActive(false);
-        }
+            if (flyingCam || !countdown)
+            {
+                ui.countdownText.gameObject.SetActive(false);
+            }
 
-        if(!started)
-        {
-            gameTimeText.gameObject.SetActive(false);
+            if (!started)
+            {
+                ui.gameTimeText.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -80,7 +77,11 @@ public class GameManager : Singleton<GameManager>
         if(started && !finished)
         {
             gameTime += Time.deltaTime;
-            gameTimeText.text = gameTime.ToString("0.00");
+
+            foreach (GameUI ui in gameUIs)
+            {
+                ui.gameTimeText.text = gameTime.ToString("0.00");
+            }
         }
     }
 
@@ -99,7 +100,10 @@ public class GameManager : Singleton<GameManager>
 
                 if(countdown)
                 {
-                    countdownText.gameObject.SetActive(true);
+                    foreach (GameUI ui in gameUIs)
+                    {
+                        ui.countdownText.gameObject.SetActive(true);
+                    }
                 }
             }
         }
@@ -117,9 +121,13 @@ public class GameManager : Singleton<GameManager>
         {
             Debug.Log(countdownTime);
 
-            animator.Play("Countdown");
             countdownTime = newTime;
-            countdownText.text = countdownTime > 0 ? countdownTime.ToString() : "GO!";            
+
+            foreach (GameUI ui in gameUIs)
+            {
+                ui.animator.Play("Countdown");
+                ui.countdownText.text = countdownTime > 0 ? countdownTime.ToString() : "GO!";
+            }
         }
     }
 
@@ -127,18 +135,24 @@ public class GameManager : Singleton<GameManager>
     {
         started = true;
 
-        gameTimeText.gameObject.SetActive(true);
+        foreach (GameUI ui in gameUIs)
+        {
+            ui.gameTimeText.gameObject.SetActive(true);
+        }
     }
 
     public void EndRace()
     {
         finished = true;
 
-        gameTimeText.gameObject.SetActive(false);
+        foreach (GameUI ui in gameUIs)
+        {
+            ui.gameTimeText.gameObject.SetActive(false);
 
-        resultText.gameObject.SetActive(true);
+            ui.resultText.gameObject.SetActive(true);
 
-        finishTimeText.text = gameTime.ToString("0.00");
-        finishTimeText.gameObject.SetActive(true);
+            ui.finishTimeText.text = gameTime.ToString("0.00");
+            ui.finishTimeText.gameObject.SetActive(true);
+        }
     }
 }

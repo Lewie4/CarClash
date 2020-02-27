@@ -245,7 +245,6 @@ public class Car : MonoBehaviour
                 clickOffset = Input.mousePosition;
             }
         }
-
     }
 
     private void FinishTurn()
