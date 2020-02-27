@@ -4648,7 +4648,7 @@ ParticleSystem:
 --- !u!199 &873027617166666773
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5012,7 +5012,7 @@ MonoBehaviour:
   arrowPower: {fileID: 1408371568199275428}
   settings:
     acceleration: 200
-    gravity: 100
+    gravity: 500
     drift: 0.98
     boostPower: 75
     slowMoPower: 1
@@ -9858,7 +9858,7 @@ ParticleSystem:
 --- !u!199 &1653130961717794491
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10355,10 +10355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1653130960577897444}
     m_Modifications:
-    - target: {fileID: 100000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
-      propertyPath: m_Name
-      value: model
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10442,6 +10438,10 @@ PrefabInstance:
     - target: {fileID: 400046, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
+      propertyPath: m_Name
+      value: model
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 131d28de1b2a5b64d9cb45008b60eaa3, type: 3}
       propertyPath: m_LocalRotation.y

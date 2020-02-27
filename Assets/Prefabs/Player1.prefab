@@ -4680,7 +4680,7 @@ ParticleSystem:
 --- !u!199 &7886713493027776780
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9823,7 +9823,7 @@ ParticleSystem:
 --- !u!199 &8619810544247100322
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10014,7 +10014,7 @@ MonoBehaviour:
   arrowPower: {fileID: 8279071483417286333}
   settings:
     acceleration: 850
-    gravity: 100
+    gravity: 500
     drift: 0.98
     boostPower: 25
     slowMoPower: 0.8
