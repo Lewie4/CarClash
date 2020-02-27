@@ -54,6 +54,9 @@ public class CameraController : MonoBehaviour
 
     Car car;
 
+    Vector3 cameraStartPostition;
+    Quaternion cameraStartRotation;
+
     void Awake()
     {
         car = GetComponent<Car>();
@@ -64,6 +67,9 @@ public class CameraController : MonoBehaviour
         cameraStartOffset = camera.transform.localPosition;
         float startDistance = Vector3.Distance(camera.transform.position, rig.position);
         initialFrustumHeight = ComputeFrustumHeight(startDistance);
+
+        cameraStartPostition = camera.transform.position;
+        cameraStartRotation = camera.transform.rotation;
 
         //UpdateCamera();
     }
@@ -82,51 +88,69 @@ public class CameraController : MonoBehaviour
             case View.QuarterTopRight: camera.rect = new Rect(.5f, .5f, .5f, .5f); break;
             case View.QuarterBottomLeft: camera.rect = new Rect(0, 0, .5f, .5f); break;
             case View.QuarterBottomRight: camera.rect = new Rect(.5f, 0, .5f, .5f); break;
-
         }
 
     }
 
+    private void Update()
+    {
+        if(GameManager.Instance.flyingCam)
+        {
+            Vector3 pos;
+            Quaternion rot;
+
+            GameManager.Instance.GetFlyingCamPosition(out pos, out rot, cameraStartPostition, cameraStartRotation);
+            camera.transform.position = pos;
+            camera.transform.rotation = rot;
+        }
+    }
+
     void FixedUpdate()
     {
-        rig.position = Vector3.Lerp(rig.position, transform.position + cameraPositionOffset, Time.deltaTime * settings.followSpeed);
-        if (settings.followRotation)
+        if (!GameManager.Instance.flyingCam)
         {
-            rig.rotation = Quaternion.Lerp(rig.rotation, Quaternion.Euler((car.settings.driftTurning ? transform.eulerAngles : new Vector3(car.vehicleModel.transform.eulerAngles.x, car.vehicleModel.transform.eulerAngles.y, 0)) + cameraRotationOffset), Time.deltaTime * settings.rotationSpeed);
+            rig.position = Vector3.Lerp(rig.position, transform.position + cameraPositionOffset, Time.deltaTime * settings.followSpeed);
+            if (settings.followRotation)
+            {
+                rig.rotation = Quaternion.Lerp(rig.rotation, Quaternion.Euler((car.settings.driftTurning ? transform.eulerAngles : new Vector3(car.vehicleModel.transform.eulerAngles.x, car.vehicleModel.transform.eulerAngles.y, 0)) + cameraRotationOffset), Time.deltaTime * settings.rotationSpeed);
+            }
         }
     }
 
     public void UpdatePP(bool isTurning)
     {
-        if (isTurning && lerpProgress < 1)
+        if (!GameManager.Instance.flyingCam)
         {
-            lerpProgress += Time.deltaTime / settings.lerpTime;
-        }
-        else if (!isTurning && lerpProgress > 0)
-        {
-            lerpProgress -= Time.deltaTime / settings.lerpTime;
-        }
+            if (isTurning && lerpProgress < 1)
+            {
+                lerpProgress += Time.deltaTime / settings.lerpTime;
+            }
+            else if (!isTurning && lerpProgress > 0)
+            {
+                lerpProgress -= Time.deltaTime / settings.lerpTime;
+            }
 
-        lerpProgress = Mathf.Clamp01(lerpProgress);
+            lerpProgress = Mathf.Clamp01(lerpProgress);
 
-        if(settings.ppVolume == null)
-        {
-            settings.ppVolume = camera.GetComponent<PostProcessVolume>();
+            if (settings.ppVolume == null)
+            {
+                settings.ppVolume = camera.GetComponent<PostProcessVolume>();
+            }
+
+            if (settings.ppVolume != null && settings.ppVolume.profile.TryGetSettings(out ChromaticAberration ca))
+            {
+                ca.intensity.value = Mathf.Lerp(0, settings.chromaticAberrationIntensity, lerpProgress);
+            }
+
+            if (settings.ppVolume != null && settings.ppVolume.profile.TryGetSettings(out Vignette v))
+            {
+                v.intensity.value = Mathf.Lerp(0, settings.vignetteIntensity, lerpProgress);
+            }
+
+            camera.transform.localPosition = Vector3.Lerp(cameraStartOffset, new Vector3(cameraStartOffset.x, cameraStartOffset.y, cameraStartOffset.z + settings.cameraDollyDistance), lerpProgress);
+            float currentDistance = Vector3.Distance(camera.transform.position, rig.position);
+            camera.fieldOfView = ComputeFieldOfView(initialFrustumHeight, currentDistance);
         }
-
-        if (settings.ppVolume != null && settings.ppVolume.profile.TryGetSettings(out ChromaticAberration ca))
-        {
-            ca.intensity.value = Mathf.Lerp(0, settings.chromaticAberrationIntensity, lerpProgress);
-        }
-
-        if (settings.ppVolume != null && settings.ppVolume.profile.TryGetSettings(out Vignette v))
-        {
-            v.intensity.value = Mathf.Lerp(0, settings.vignetteIntensity, lerpProgress);
-        }
-
-        camera.transform.localPosition = Vector3.Lerp(cameraStartOffset, new Vector3(cameraStartOffset.x, cameraStartOffset.y, cameraStartOffset.z + settings.cameraDollyDistance), lerpProgress);
-        float currentDistance = Vector3.Distance(camera.transform.position, rig.position);
-        camera.fieldOfView = ComputeFieldOfView(initialFrustumHeight, currentDistance);
     }
 
     private float ComputeFrustumHeight(float distance)
