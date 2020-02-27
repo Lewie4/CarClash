@@ -5011,15 +5011,15 @@ MonoBehaviour:
   arrow: {fileID: 1863503289367177399}
   arrowPower: {fileID: 1408371568199275428}
   settings:
-    acceleration: 850
+    acceleration: 200
     gravity: 100
     drift: 0.98
-    boostPower: 38
-    slowMoPower: 0.9
+    boostPower: 75
+    slowMoPower: 1
     alwaysSmoke: 0
     airBoost: 1
-    driftTurning: 1
-    snapTurning: 0
+    driftTurning: 0
+    snapTurning: 1
     vibrateAmount: 0
     vibrateSpeed: 0
     smokeSize:
@@ -5055,14 +5055,14 @@ MonoBehaviour:
   rig: {fileID: 1653130960792722288}
   settings:
     view: 5
-    followSpeed: 7
-    rotationSpeed: 2.7
+    followSpeed: 11.1
+    rotationSpeed: 4.2
     followRotation: 1
     ppVolume: {fileID: 317741976}
-    lerpTime: 2
+    lerpTime: 1
     chromaticAberrationIntensity: 0.8
     vignetteIntensity: 0.2
-    cameraDollyDistance: 2
+    cameraDollyDistance: 0.75
 --- !u!135 &1653130960577897447
 SphereCollider:
   m_ObjectHideFlags: 0

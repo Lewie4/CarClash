@@ -4680,7 +4680,7 @@ ParticleSystem:
 --- !u!199 &5287447302000393604
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4948,33 +4948,34 @@ MonoBehaviour:
   camera: {fileID: 4122053921078130904}
   controls:
     playerNum: 2
-    useMouse: 0
-    left: 97
-    right: 100
-    turnSpeed: 150
-  vehicleModel: {fileID: 2423407589493718028}
-  sphere: {fileID: 6020271916640829112}
-  smokeLeft: {fileID: 6020271916468930347}
-  smokeRight: {fileID: 638088101142589846}
-  wheelFrontLeft: {fileID: 2423407589493718022}
-  wheelFrontRight: {fileID: 2423407589493718040}
-  body: {fileID: 2423407589493718024}
-  container: {fileID: 2423407589493718026}
-  trailLeft: {fileID: 6020271917346493599}
-  trailRight: {fileID: 6020271915339826334}
-  arrow: {fileID: 6674663327727565094}
-  arrowPower: {fileID: 6266440891473363509}
+    useMouse: 1
+    left: 0
+    right: 0
+    turnSpeed: 42.93
+  vehicleModel: {fileID: 0}
+  sphere: {fileID: 0}
+  smokeLeft: {fileID: 0}
+  smokeRight: {fileID: 0}
+  wheelFrontLeft: {fileID: 0}
+  wheelFrontRight: {fileID: 0}
+  body: {fileID: 0}
+  container: {fileID: 0}
+  trailLeft: {fileID: 0}
+  trailRight: {fileID: 0}
+  arrow: {fileID: 0}
+  arrowPower: {fileID: 0}
   settings:
-    acceleration: 1500
+    acceleration: 850
     gravity: 100
-    drift: 1
-    boostPower: 35
-    slowMoPower: 0.2
+    drift: 0.98
+    boostPower: 38
+    slowMoPower: 0.9
     alwaysSmoke: 0
     airBoost: 1
     driftTurning: 1
-    vibrateAmount: 5
-    vibrateSpeed: 35
+    snapTurning: 0
+    vibrateAmount: 0
+    vibrateSpeed: 0
     smokeSize:
       m_Mode: 3
       m_CurveMultiplier: 0
@@ -5004,18 +5005,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10d9eb340c75104c872c36b1689803e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 6020271917271890766}
-  rig: {fileID: 6020271916081187553}
+  camera: {fileID: 0}
+  rig: {fileID: 0}
   settings:
-    view: 0
-    followSpeed: 8
-    rotationSpeed: 4
+    view: 7
+    followSpeed: 7
+    rotationSpeed: 2.7
     followRotation: 1
     ppVolume: {fileID: 0}
-    lerpTime: 0.35
-    chromaticAberrationIntensity: 1
+    lerpTime: 2
+    chromaticAberrationIntensity: 0.8
     vignetteIntensity: 0.2
-    cameraDollyDistance: 3
+    cameraDollyDistance: 2
 --- !u!135 &6020271915463455350
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9741,7 +9742,7 @@ ParticleSystem:
 --- !u!199 &6020271916468930346
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9897,13 +9898,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6020271917271890763}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalRotation: {x: -0.15212336, y: 0, z: 0, w: 0.98836154}
+  m_LocalPosition: {x: 0, y: 0.02, z: -4.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6020271916081187553}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -17.5, y: 0, z: 0}
 --- !u!20 &6020271917271890766
 Camera:
   m_ObjectHideFlags: 0
@@ -9928,7 +9929,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 5000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -10417,27 +10418,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c67350759217e841afb231c0ddf9f19, type: 3}
---- !u!4 &2423407589493718040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400016, guid: 8c67350759217e841afb231c0ddf9f19,
-    type: 3}
-  m_PrefabInstance: {fileID: 2423407589493843592}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2423407589493718022 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400014, guid: 8c67350759217e841afb231c0ddf9f19,
-    type: 3}
-  m_PrefabInstance: {fileID: 2423407589493843592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2423407589493718024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8c67350759217e841afb231c0ddf9f19,
-    type: 3}
-  m_PrefabInstance: {fileID: 2423407589493843592}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2423407589493718026 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400002, guid: 8c67350759217e841afb231c0ddf9f19,
     type: 3}
   m_PrefabInstance: {fileID: 2423407589493843592}
   m_PrefabAsset: {fileID: 0}
