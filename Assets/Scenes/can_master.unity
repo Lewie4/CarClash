@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player0
       objectReference: {fileID: 0}
+    - target: {fileID: 1653130961135016763, guid: 6f17eefc3cafc6847a60789bc6f93e19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1653130961135016762, guid: 6f17eefc3cafc6847a60789bc6f93e19,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -162,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 1653130961135016762, guid: 6f17eefc3cafc6847a60789bc6f93e19,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1653130961135016762, guid: 6f17eefc3cafc6847a60789bc6f93e19,
         type: 3}
@@ -334,11 +339,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ec2b4229794834ba55f5db13dab5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingCam: 0
   started: 0
   countdown: 1
   countdownTimer: 5
   countdownText: {fileID: 1458752331}
   animator: {fileID: 1458752333}
+  gameTimeText: {fileID: 0}
+  flyingCameraNodes: []
 --- !u!1 &767391245
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1100957618
 PrefabInstance:
@@ -593,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 6020271916019911339, guid: a894ba71bc18bf644af11da484001754,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6020271916019911339, guid: a894ba71bc18bf644af11da484001754,
         type: 3}
@@ -614,6 +622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: settings.view
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 530144944650106345, guid: a894ba71bc18bf644af11da484001754,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a894ba71bc18bf644af11da484001754, type: 3}
@@ -840,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1458752330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -908,7 +921,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 500
+  m_fontSize: 372.95
   m_fontSizeBase: 800
   m_fontWeight: 400
   m_enableAutoSizing: 1
