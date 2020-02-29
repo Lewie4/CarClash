@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreePineA (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 86184acab029da948a7bc5319ad52c6c, type: 3}
+      propertyPath: m_TagString
+      value: Trees
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86184acab029da948a7bc5319ad52c6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -115,7 +119,11 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 86184acab029da948a7bc5319ad52c6c, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 40c1795b3f4ac1b4da275e20cd5aa752, type: 2}
+      objectReference: {fileID: 2100000, guid: 8266b57b500d1da42b06c4456cf98092, type: 2}
+    - target: {fileID: 2300000, guid: 86184acab029da948a7bc5319ad52c6c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8266b57b500d1da42b06c4456cf98092, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86184acab029da948a7bc5319ad52c6c, type: 3}
 --- !u!1 &527682636250013095 stripped
