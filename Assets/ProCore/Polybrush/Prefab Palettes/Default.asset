@@ -23,3 +23,25 @@ MonoBehaviour:
     settings:
       rotationRange: {x: 0, y: 0}
       scaleRange: {x: 0, y: 0}
+  - gameObject: {fileID: 100000, guid: 849c552f6e358744a838a3865e1a9c7b, type: 3}
+    settings:
+      rotationRange: {x: 0, y: 0}
+      scaleRange: {x: 0, y: 0}
+  - gameObject: {fileID: 100000, guid: 20901f4253dbf8e4ca88475d3f1ee259, type: 3}
+    settings:
+      rotationRange: {x: 0, y: 0}
+      scaleRange: {x: 0, y: 0}
+  - gameObject: {fileID: 100000, guid: ebc26fc7e723b484c933b7ee4ead1c22, type: 3}
+    settings:
+      rotationRange: {x: 0, y: 0}
+      scaleRange: {x: 0, y: 0}
+  - gameObject: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+      type: 3}
+    settings:
+      rotationRange: {x: 0, y: 0}
+      scaleRange: {x: 0, y: 0}
+  - gameObject: {fileID: 8132440246205730864, guid: f82ec2f7ccf833540947ba343a46f303,
+      type: 3}
+    settings:
+      rotationRange: {x: 0, y: 0}
+      scaleRange: {x: 0, y: 0}
