@@ -19,6 +19,7 @@ public class Car : MonoBehaviour
         public float vibrateAmount = 5f;
         public float vibrateSpeed = 35f;
         public ParticleSystem.MinMaxCurve smokeSize = new ParticleSystem.MinMaxCurve(0.3f, 0.6f);
+        public bool onlyYBoost;
     }
 
     [System.Serializable]
@@ -293,8 +294,8 @@ public class Car : MonoBehaviour
 
             rotate = Mathf.Clamp(dir.x * -controls.turnSpeed, -110f, 110f);
 
-            var start = new Vector3(clickOffset.x / screenXDistance, clickOffset.y / screenYDistance);
-            var end = new Vector3(cameraPoint.x / screenXDistance, cameraPoint.y / screenYDistance);
+            var start = new Vector3((settings.onlyYBoost ? 0 :clickOffset.x) / screenXDistance, clickOffset.y / screenYDistance);
+            var end = new Vector3((settings.onlyYBoost ? 0 : cameraPoint.x) / screenXDistance, cameraPoint.y / screenYDistance);
 
             boostMod = Mathf.Clamp01(Vector3.Distance(start, end));
         }
