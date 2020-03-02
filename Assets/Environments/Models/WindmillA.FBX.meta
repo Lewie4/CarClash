@@ -4,13 +4,27 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: FarmAssets (2)
+    100004: WaterWell
+    100006: Well (4)
     400000: //RootNode
+    400002: FarmAssets (2)
+    400004: WaterWell
+    400006: Well (4)
     2100000: t_rockside
     2100002: t_rocktop
     2100004: t_midfield
+    2100006: Grey
+    2100008: Brown
+    2100010: LightRed
+    2100012: DarkGrey
+    2100014: White
     2300000: //RootNode
+    2300002: WaterWell
     3300000: //RootNode
+    3300002: WaterWell
     4300000: WindmillA
+    4300002: WaterWell
   externalObjects: {}
   materials:
     importMaterials: 1
