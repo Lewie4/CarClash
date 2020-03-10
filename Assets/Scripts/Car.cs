@@ -48,6 +48,8 @@ public class Car : MonoBehaviour
     public Transform container;
     public TrailRenderer trailLeft;
     public TrailRenderer trailRight;
+    public TrailRenderer vapourTrailLeft;
+    public TrailRenderer vapourTrailRight;
     public GameObject arrow;
     public GameObject arrowPower;
 
@@ -58,7 +60,8 @@ public class Car : MonoBehaviour
 
     bool isTurning;
     float rotate;
-
+    bool vapourTrailEmitting;
+    float vapourTrailTimer;
     bool nearGround;
     bool onGround;
 
@@ -205,6 +208,19 @@ public class Car : MonoBehaviour
         {
             TyreSmoke(smokeRight, isTurning || drifting || settings.alwaysSmoke);
         }
+        if (vapourTrailLeft != null)
+        {
+            vapourTrailLeft.emitting = vapourTrailEmitting;
+        }
+        if (vapourTrailRight != null)
+        {
+            vapourTrailRight.emitting = vapourTrailEmitting;
+        }
+        if (vapourTrailEmitting)
+        {
+            vapourTrailTimer -= Time.deltaTime;
+            if (vapourTrailTimer < 0f) vapourTrailEmitting = false;
+        }
     }
 
     private void TyreSmoke(ParticleSystem particleSystem, bool smokeActive)
@@ -263,6 +279,11 @@ public class Car : MonoBehaviour
         if(settings.snapTurning)
         {
             sphere.velocity = sphere.velocity.magnitude * vehicleModel.forward;
+        }
+        if(boostMod > 0.5f)
+        {
+            vapourTrailEmitting = true;
+            vapourTrailTimer = 1f;
         }
 
         rotate = 0;
