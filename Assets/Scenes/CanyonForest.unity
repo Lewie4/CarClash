@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 1653130961135016762, guid: 6f17eefc3cafc6847a60789bc6f93e19,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1653130961135016762, guid: 6f17eefc3cafc6847a60789bc6f93e19,
         type: 3}
@@ -423,6 +423,7 @@ Transform:
   - {fileID: 1567673801}
   - {fileID: 1876542027}
   - {fileID: 1815423253}
+  - {fileID: 2109952069}
   m_Father: {fileID: 178875227}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -560,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 5015735982949499920, guid: 08d1ebe550141914cadea4c30558caeb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5015735982949499920, guid: 08d1ebe550141914cadea4c30558caeb,
         type: 3}
@@ -938,6 +939,7 @@ Transform:
   m_Children:
   - {fileID: 27487866}
   - {fileID: 1522106847}
+  - {fileID: 298619095}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -954,9 +956,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyingCam: 1
+  flyingCamAnim: {fileID: 2109952070}
   started: 0
   countdown: 1
   countdownTimer: 3
+  animatedFlyingCamera: 1
   flyingCameraNodes:
   - transform: {fileID: 957365105}
     timeToNextNode: 1
@@ -1204,6 +1208,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &298619094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298619095}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &298619095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298619094}
+  m_LocalRotation: {x: 0.03411463, y: -0, z: -0, w: 0.99941796}
+  m_LocalPosition: {x: -54.247, y: 3.0027509, z: -333.80185}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 178875227}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &382080418
 GameObject:
   m_ObjectHideFlags: 0
@@ -27832,6 +27866,56 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &2109952068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2109952069}
+  - component: {fileID: 2109952070}
+  m_Layer: 0
+  m_Name: FlyingCamAnimated
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2109952069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109952068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 27487866}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2109952070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109952068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 925c86c67e947da4a96fdc79e378c622, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2142763617
 GameObject:
   m_ObjectHideFlags: 0
@@ -27966,7 +28050,7 @@ PrefabInstance:
     - target: {fileID: 530144944650106345, guid: a894ba71bc18bf644af11da484001754,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 530144944650106345, guid: a894ba71bc18bf644af11da484001754,
         type: 3}
@@ -28092,7 +28176,7 @@ PrefabInstance:
     - target: {fileID: 8619810544847117859, guid: 064215ad6ae6ea64b8c43db362ab9b24,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8619810544847117859, guid: 064215ad6ae6ea64b8c43db362ab9b24,
         type: 3}
