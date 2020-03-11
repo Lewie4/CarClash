@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 6d356e9118fc9ab449457d6dcd5b7f49
+guid: 65f31c0a615e94e4db311064d1e1d7fb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: CC_Rock2_low
+    100000: CC_Rock3_low
     100002: //RootNode
-    400000: CC_Rock2_low
+    400000: CC_Rock3_low
     400002: //RootNode
     2100000: CC_red_rocks
-    2300000: CC_Rock2_low
-    3300000: CC_Rock2_low
-    4300000: CC_Rock2_low
+    2300000: CC_Rock3_low
+    3300000: CC_Rock3_low
+    4300000: CC_Rock3_low
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: CC_red_rocks
-    second: {fileID: 2100000, guid: 0085eec159584bd4b9e904d30e2ef2da, type: 2}
+    second: {fileID: 2100000, guid: 5b323e9d767390e49a5be91910d3db86, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
