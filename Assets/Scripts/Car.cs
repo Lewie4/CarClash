@@ -140,10 +140,20 @@ public class Car : MonoBehaviour
             {
                 var vibration = Mathf.Sin(Time.time * settings.vibrateSpeed) * settings.vibrateAmount * boostMod;
                 Debug.Log(vibration);
-                //vehicleModel.Rotate(0f, 0f, vibration);
-                vehicleModel.localRotation = Quaternion.Euler(new Vector3(0, rotate, vibration));
+
+
+                if (hitNear.collider != null)
+                {
+                    //New method of combining ground vector and turning angle in when in non driftturn mode
+                    Vector3 rotateFwd = Quaternion.Euler(new Vector3(0, startRot.y + rotate, 0)) * Vector3.forward;
+                    vehicleModel.rotation = Quaternion.LookRotation(rotateFwd, hitNear.normal);
+                }
+                else
+                {
+                    vehicleModel.localRotation = Quaternion.Euler(new Vector3(0, rotate, vibration)); 
+                }
                 //vehicleModel.localRotation = Quaternion.Euler(vehicleModel.localEulerAngles + (Vector3.up * rotate));
-            }        
+            }
         }
         else
         {
