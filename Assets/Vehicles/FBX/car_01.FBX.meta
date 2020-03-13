@@ -16,6 +16,7 @@ ModelImporter:
     100020: Sky002
     100022: Sun001
     100024: WindowsGlass
+    100026: WheelMappedFL
     400000: //RootNode
     400002: Car_Base
     400004: Car_Daylight_001
@@ -29,29 +30,34 @@ ModelImporter:
     400020: Sky002
     400022: Sun001
     400024: WindowsGlass
+    400026: WheelMappedFL
     2100000: tire
     2100002: body
     2100004: metal
     2100006: bodyDark
     2100008: mat_windowsglass
+    2100010: 02 - Default
     2300000: Car_Base
     2300002: Component#2_001
     2300004: Component#2_002
     2300006: Component#2_003
     2300008: Component#2_004
     2300010: WindowsGlass
+    2300012: WheelMappedFL
     3300000: Car_Base
     3300002: Component#2_001
     3300004: Component#2_002
     3300006: Component#2_003
     3300008: Component#2_004
     3300010: WindowsGlass
+    3300012: WheelMappedFL
     4300000: Component#2_001
     4300002: Component#2_002
     4300004: Component#2_003
     4300006: Component#2_004
     4300008: Car_Base
     4300010: WindowsGlass
+    4300012: WheelMappedFL
     10800000: Sky002
     10800002: Sun001
   externalObjects: {}
