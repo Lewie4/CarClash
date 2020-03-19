@@ -10,7 +10,7 @@ public class Car : MonoBehaviour
         [Range(0.0f, 2000.0f)] public float acceleration = 1500f;
         [Range(0.0f, 500.0f)] public float gravity = 100f;
         [Range(0.0f, 1.0f)] public float drift = 1f;
-        [Range(0.0f, 100.0f)] public float boostPower = 35f;
+        [Range(0.0f, 250.0f)] public float boostPower = 35f;
         [Range(0.0f, 1.0f)] public float slowMoPower = 0.2f;
         public bool alwaysSmoke = false;
         public bool airBoost = true;
